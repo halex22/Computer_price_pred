@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	
+	<div style="color:black">
+		<form action="{{ url_for('predict')}}" method="post">
+			<h1>Computer Price Prediction</h1>
+			<p>If you want to have and idea of the price of the computer you would like to buy, please provide the next values<br>Note! this estimation has a mean error around 5%</p>
+			<h3>What is the speed of the processor?</h3><input id="speed" name="speed" type="number">
+			<h3>What is the capacity of the hard-drive?</h3><input id="hard-drive" name="hd", required="required">
+			<h3>How much ram does the computer have?</h3><input id="ram-memory" name="ram", required="required">
+			<h3>What is the size of the screen?<br>(in inches)</h3><input id="screen-size" name="screen" required="required">
+			<h3>Does it have a cd reader?</h3><select name="cd" id="cd-reader" required="required">
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			<h3>Does it have multi ports?</h3><select name="multi" id="multi", required="required">
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			<h3>Does it have premium features?</h3><select name="premium" id="premium", required="required">
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			<h3>How many ads?</h3><p>choose a number between 39 and 339</p><input id="ads" name="ads", required="required">
+			<h3>What is the trend number?</h3><p>Choose a number between 1 and 35</p><input id="trend" name="trend" required="required">
+			<br><br><button id="sub" type="submit">Calculate the computer price</button>
+			<br>
+			
+		</form>
+
+
+		<br><br><h3>{{ prediction_text }}<h3>
+	</div>
+
+	<style>
+		body {
+			background-color: #FFFAF0;
+			padding: 0px;
+		}
+	</style>
+
+</body>
+
+</html>
